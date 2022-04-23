@@ -5,6 +5,7 @@ import com.person.tank.pojo.MapDo;
 import com.person.tank.pojo.vo.PageResult;
 import com.person.tank.service.MapService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ import java.util.List;
  * @date 2022/4/21 22:33
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/tank")
 public class TankController {
     @Autowired
