@@ -2,8 +2,10 @@ package com.person.tank.controller;
 
 import com.person.tank.common.ApiResult;
 import com.person.tank.pojo.MapDo;
+import com.person.tank.pojo.vo.PageResult;
 import com.person.tank.service.MapService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,8 +28,8 @@ public class TankController {
     }
 
 
-    @RequestMapping("upload")
-    public ApiResult<String> upload(MapDo map){
+    @RequestMapping("/upload")
+    public ApiResult<String> upload(@RequestBody MapDo map){
         try{
             mapService.upload(map);
             return ApiResult.ok();
@@ -36,8 +38,8 @@ public class TankController {
         }
     }
 
-    @RequestMapping("listPage")
-    public ApiResult<List<MapDo>> listPage(int start,int limit){
+    @RequestMapping("/listPage")
+    public ApiResult<PageResult> listPage(int start, int limit){
         try{
             return new ApiResult<>(mapService.listPage(start,limit));
         }catch (Exception e){

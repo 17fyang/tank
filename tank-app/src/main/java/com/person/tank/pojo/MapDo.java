@@ -2,6 +2,7 @@ package com.person.tank.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 
@@ -10,19 +11,20 @@ import java.io.Serializable;
  * @version 1.0
  * @date 2022/4/21 23:24
  */
+@TableName("map")
 public class MapDo implements Serializable {
     @TableId(type = IdType.AUTO)
-    private long id;
+    private Long id;
 
     private String name;
 
     private String map;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
